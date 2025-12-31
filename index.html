@@ -1,0 +1,2264 @@
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh sách tài khoản</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f6fc;
+    }
+    .copy-message {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(91, 33, 182, 0.9);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      z-index: 1000;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .copy-message.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="antialiased flex flex-col items-center p-6">
+  <header class="w-full text-center mb-8">
+    <h1 class="text-4xl font-extrabold text-purple-700">Danh sách tài khoản</h1>
+    <p class="text-lg text-gray-600 mt-2">Không được đăng nhập vào icloud, đăng nhập icloud trong cài đặt t đánh chết =))<br>
+      <span id="realTimeClock" class="font-bold text-purple-800"></span>
+    </p>
+  </header>
+
+  <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+                  <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 1</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_0" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bcc8c9cb8dcdde89fc8e8ddfd292dfd3d1">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_0')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_0" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">Bmv4AVNuuf</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_0')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 2</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_1" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e4a1968d87a88d8a8097819d839596a48b9190888b8b8fca878b89ca928a">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_1')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_1" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">UmwuV439xc</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_1')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 3</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_2" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e1ac8e8d8d98a584928c8e8f858987d4d5d7a188828d8e9485cf828e8c">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_2')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_2" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">3jjGbVxfHM</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_2')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 4</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_3" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d4a6bda7b1a0a6b5a4b5baa7a6a0b1b9e594bcbba0b9b5bdb8fab7bbb9">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_3')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_3" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">gw5ZvPuv3s</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_3')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 5</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_4" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="41202525282d382f362920352d2438757572717101292e352c20282d6f222e2c">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_4')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_4" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">7Fry8vsQzB</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_4')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 6</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_5" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0c4e6962666d61656238396a6d4c656f60637968226f6361">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_5')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_5" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">FqSgyt5E3r</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_5')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 7</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_6" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="054b647164766d6431306364776133456c66696a70612b666a68">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_6')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_6" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">37CSfsKkrK</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_6')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 8</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_7" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9dd7f2eef5e8fcc4f2a9a8fbfcacacddf4fef1f2e8f9b3fef2f0">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_7')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_7" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">uCtCfg6Dkb</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_7')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 9</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_8" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ae1fffbbce0e3cabbbcb9a4e9e5e7">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_8')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_8" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">zd25RGKve4</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_8')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 10</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_9" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ef998e8a848081868686af868c83809a8bc18c8082">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_9')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_9" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">nwYW35TZwM</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_9')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 11</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_10" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="63150206080c0d020202230a000f0c16074d000c0e">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_10')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_10" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">Kd8TKM7VaZ</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_10')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 12</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_11" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bfc9dedad4d0d1dcdcdcffd6dcd3d0cadb91dcd0d2">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_11')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_11" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">MPA51aRDjm</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_11')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 13</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_12" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9de8f5f8f3f7f2f6f6f6ddf4fef1f2e8f9b3fef2f0">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_12')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_12" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">67zF3VGye1</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_12')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 14</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_13" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="32515300505540015c01040159584006725b515e5d47561c515d5f">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_13')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_13" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">MkKXakn826</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_13')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 15</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_14" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dc97aebdaab5a4bdb0b9b2a8ebe9e49f9cb5bfb0b3a9b8f2bfb3b1">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_14')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_14" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">Z4FEfWG9tH</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_14')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 16</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_15" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="17737621657e2e762e74652478577e747b7862733974787a">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_15')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_15" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">dTKUvW6ZZd</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_15')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 17</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_16" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="244a465652471515161616644c4b5049454d480a474b49">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_16')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_16" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">RVdE5JjDWs</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_16')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 18</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_17" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cda9bda6a7a6a3a9f9f8f8fbfc8da5a2b9a0aca4a1e3aea2a0">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_17')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_17" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">UnM6JFrANs</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_17')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 19</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_18" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="56342461233564336535246739163f353a3923327835393b">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_18')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_18" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">2QzvJTJAZE</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_18')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 20</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_19" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d8aeb9b4bdacb1acb9e1e198b0b7acb5b9b1b4f6bbb7b5">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_19')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_19" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">JChGq2ywJ4</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_19')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 21</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_20" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dbaca2baafafbcb4b5bdaeebeb9bb3b4afb6bab2b7f5b8b4b6">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_20')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_20" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">26zrpRdf73</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_20')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 22</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_21" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4c253f2d2d2f2825342322367e3d0c242338212d2520622f2321">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_21')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_21" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">YTVc2aWZ4A</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_21')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 23</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_22" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="29485a484c4c5a1d115b194c4a436941465d44484045074a4644">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_22')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_22" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">G24Eujj2D9</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_22')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 24</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_23" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d0bab1a9b4b5beb3bfbcb5a9e6b690b8bfa4bdb1b9bcfeb3bfbd">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_23')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_23" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">h35sWkeKnH</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_23')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 25</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_24" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1f7476287e712f6c2c7c7726725f767c73706a7b317c7072">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_24')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_24" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">Na9VvS3fpT</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_24')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 26</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_25" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e8899dd19a87d89adf8b87dd84a8818b84879d8cc68b8785">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_25')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_25" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">6x2DJRq1qX</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_25')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 27</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_26" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3557074f57595042545754535750755d5a4158545c591b565a58">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_26')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_26" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">mq6Rbe1h24</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_26')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 28</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_27" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cf85a0bdabaea18caebdbdfcfba8a98fa6aca3a0baabe1aca0a2">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_27')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_27" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">TDXVhvzdE71c</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_27')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 29</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_28" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e2b18b878c8c83b58d8d86dad6d7d48a84a28b818e8d9786cc818d8f">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_28')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_28" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">TD5hYcAbRhhT</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_28')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 30</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_29" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5d10322f3a3c33163833333839246e693a3b1d343e31322839733e3230">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_29')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_29" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">TDSaen72YtuE</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_29')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 31</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_30" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0147686f6d6078566472756e6f32354168626d6e74652f626e6c">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_30')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_30" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">TD3TnVNuB5TC</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_30')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 32</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_31" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="acffcfcddec0c9d8d8eac5c2cfc4c4ca9899cbecc5cfc0c3d9c882cfc3c1">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_31')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_31" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">TDvCq9V3Dqkh</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_31')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 33</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_32" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ee838b89828f94948b9c879786ae86819a838f8782c08d8183">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_32')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_32" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">TDHE7HVXjCDY</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_32')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 34</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_33" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a5cec0c9c9c0dcd2c0c0d1cd97c9e5cdcad1c8c4ccc98bc6cac8">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_33')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_33" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">TDDx9s9A8FX8</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_33')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 35</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_34" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1f667a697a6b6b7a6c6b7a767177706d6c6b7c2b5f77706b727e7673317c7072">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_34')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_34" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">TD7HV46aJJFD</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_34')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 36</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_35" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3546045800015a5403425c000102755d5a4158545c591b565a58">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_35')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_35" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">mAby!38r</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_35')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 37</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_36" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="15617d706572747c21222320557278747c793b767a78">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_36')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_36" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">E9Xg!tMh</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_36')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 38</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_37" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a9ccddcadadcc4c8e9c1c6ddc4c8c0c587cac6c4">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_37')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_37" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">Ah@6REXB</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_37')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 39</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_38" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e29a8b838d8a8d8dd1d2d2a2d3d4d1cc818d8f">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_38')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_38" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">uZ9@3CFt</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_38')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 40</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_39" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="116978707e68646b79747f202322252427512027223f727e7c">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_39')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_39" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">!6ItQ25N</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_39')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 41</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_40" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2e1f1f6e455b4f47575b401f004d4143">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_40')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_40" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">q8PvX34GW3</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_40')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 42</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_41" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="754440351e00141c0c001b445b161a18">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_41')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_41" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">z3dZ3FzqxY</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_41')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 43</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_42" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7340434145331f051c16180a5d101c1e">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_42')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_42" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">VhXeKjZhB3</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_42')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 44</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_43" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="211019614a54404858544f100f424e4c">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_43')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_43" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">qUuZ3A9tDt</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_43')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 45</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_44" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e3d2d7a38896828a9a968dd2cd808c8e">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_44')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_44" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">WX6r5wUzpA</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_44')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 46</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_45" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="eddcd4ad86988c84949883dcc38e8280">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_45')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_45" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">mQeJcqybU9</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_45')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 47</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_46" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a19391e1cad4c0c8d8d4cf908fc2cecc">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_46')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_46" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">cRG7NvFNGf</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_46')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 48</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_47" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7c4d4f3c17091d150509124d521f1311">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_47')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_47" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">FKQdS2akCx</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_47')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 49</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_48" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c5f4f785aeb0a4acbcb0abf4eba6aaa8">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_48')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_48" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">WS8tqgW6jF</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_48')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 50</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_49" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b9888ef9d2ccd8d0c0ccd78897dad6d4">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_49')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_49" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">AkQjFKdfm4</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_49')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 51</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_50" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0a797e6f7c6f64796460607e3b4a6d676b636624696567">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_50')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_50" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">FP5a6bmVH4</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_50')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 52</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_51" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f5949b9684c3c49b80939c9ab59298949c99db969a98">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_51')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_51" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">Ma3ZMvZu2w</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_51')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 53</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_52" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="117a667e6178767a22292128512027223f727e7c">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_52')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_52" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">Dd128c2e6</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_52')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 54</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_53" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="92e3f4e2f1e5e8e2aba6a0d2a3a4a1bcf1fdff">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_53')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_53" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">mxhp8mP9BJ</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_53')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 55</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_54" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1d707c79787164737e6f7c6b7873717a6765282e2b295d7a707c7471337e7270">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_54')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_54" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">vN151Vd7Dy</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_54')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 56</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_55" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ec9a8b8580899f8b84d8deac8b818d8580c28f8381">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_55')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_55" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">4HWwRkya6B</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_55')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 57</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_56" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="630c14060d04080e080e0c11060d0c230b0c170e020a0f4d000c0e">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_56')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_56" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">9dEHlMC\u0026</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_56')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 58</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_57" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="552534383039346066363d3431223c363e383f3f153a2021393a3a3e7b363a38">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_57')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_57" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">ef6BRTCpTj</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_57')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 59</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_58" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d5b8bcb4a6a1bbb9b0ac95b2b8b4bcb9fbb6bab8">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_58')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_58" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">Dd13c8e6d</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_58')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 60</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_59" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d9abb6aebcb7b8aeb6b6bdb8abbdebedefe9edebbb99b0bab5b6acbdf7bab6b4">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_59')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_59" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">BgW5juwnAt</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_59')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 61</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_60" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9bdffef9f4e9fae1ebf2d3fae9e9a2adacdbf2f8f7f4eeffb5f8f4f6">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_60')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_60" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">x5Qt9ch9m9</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_60')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 62</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_61" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7babeb4bfb2bbbbb2a6baa5a0bee497b0bab6bebbf9b4b8ba">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_61')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_61" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">gM7H6p96py</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_61')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 63</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_62" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0b616a797d6a79627879627d6e7f7f6e7e6d383f3b324b6c666a626725686466">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_62')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_62" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">VG7j2eeg4C</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_62')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 64</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_63" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="613704050504132400130d1303110b090721060c00080d4f020e0c">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_63')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_63" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">4PdNahXmqR</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_63')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 65</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_64" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b7c6d0d5838080858784f786818499d4d8da">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_64')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_64" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">cZK7zCHkFF</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_64')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 66</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_65" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="89c4e0fbe8e7edf3f9e0c1fceee1b1bdb1c9e0eae5e6fceda7eae6e4">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_65')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_65" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">spkV7Q52C1</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_65')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 67</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_66" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dc8cb9aeb9a69eb9a8a8a5a6a6b89cbbb1bdb5b0f2bfb3b1">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_66')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_66" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">98uXd9NR7w</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_66')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 68</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_67" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b5c4d3c3d7d9df878c838df58483869bd6dad8">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_67')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_67" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">1qNQ2sDUJ1</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_67')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 69</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_68" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="503f2220223f3235233f6560103f25243c3f3f3b7e333f3d">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_68')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_68" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">6EJG1crZbk</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_68')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 70</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_69" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e68a878b848394929493928ed4ded4a6818b878f8ac885898b">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_69')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_69" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">2fCnKFRFKR</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_69')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 71</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_70" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d091bcbcb5be9db9bcbcb9b5a0a9bce8e7e990b7bdb1b9bcfeb3bfbd">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_70')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_70" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">44s41NP3MD5pf3</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_70')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 72</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_71" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ce6f5bfb9b5b4b8bcbab9bdccbdbabfa2efe3e1">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_71')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_71" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">Dd1927013</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_71')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 73</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_72" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9ae8f5e9e9f1fff4f4fffee3f0e8fffdafa3afa9dafdf7fbf3f6b4f9f5f7">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_72')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_72" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">De1Hm1h7a9</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_72')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 74</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_73" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9dcfd8dfd8d1cdcfd4d9d8aaa4ddf5f2e9f0fcf4f1b3fef2f0">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_73')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_73" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">6CFTdyJpNA</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_73')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 75</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_74" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3351415257475d415c40525f515245000a02060073545e525a5f1d505c5e">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_74')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_74" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">6jRNZT41Bm</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_74')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 76</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_75" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6a210f1c03101a03270f5c5e5e2a030906051f0e44090507">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_75')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_75" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">jBh1Vj8EH3</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_75')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 77</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_76" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="62200716161b250310010b03570007575422050f030b0e4c010d0f">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_76')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_76" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">44s4nrRa3yZnJ5</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_76')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 78</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_77" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8eeaeff8e7eab9f4e5fde3fbe0e1f4cee6e1fae3efe7e2a0ede1e3">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_77')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_77" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">TzTx3!zd</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_77')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 79</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_78" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1b6e78736f697e7f767a7c746c7a757f7d2e2b2a235b7c767a727735787476">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_78')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_78" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">Y3B9gtum4K</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_78')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 80</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_79" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bbdad5dfdec9c8ded5cbc9d4c8d8d3cdd8898c8d8ffbdcd6dad2d795d8d4d6">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_79')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_79" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">FAy8cCAE8R</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_79')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 81</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_80" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4d3924283e252c20223f3a2c343a247b797f7d0d2a202c2421632e2220">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_80')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_80" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">6ZRcWustJ4</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_80')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 82</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_81" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fa90838c8b8c9f8a94cecdcfbacbccc9d4999597">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_81')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_81" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">TDvU2c8Yw9Qr</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_81')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 83</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_82" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1d6c6872797273737871715d7a707c7471337e7270">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_82')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_82" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">Dd10096da</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_82')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 84</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_83" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e4968b8681969093858a83d7dcd4a48389858d88ca878b89">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_83')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_83" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">fgKXq3uWA6</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_83')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 85</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_84" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a5d4ccc4cb97959592919c90dfcdc4cbe59493968bc6cac8">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_84')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_84" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">CkMNTrafY8</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_84')">Copy</button>
+            </div>
+          </div>
+        </div>
+              <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-200 hover:shadow-xl transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+              Hoạt động            </span>
+            <span class="text-sm text-gray-500 font-medium">ID: 86</span>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-medium mb-1">Username:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="user_85" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="157b7c6072607471747b2624252423557d7a6178747c793b767a78">[email&#160;protected]</a></span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('user_85')">Copy</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 text-sm font-medium mb-1">Password:</label>
+            <div class="flex items-center bg-gray-100 rounded-lg p-2">
+              <span id="pass_85" class="flex-1 text-gray-800 font-mono text-sm break-all pr-2">nMF#Bhs0</span>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm font-semibold" onclick="copyToClipboard('pass_85')">Copy</button>
+            </div>
+          </div>
+        </div>
+            </main>
+
+  <div id="copyMessage" class="copy-message"></div>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    function showCopyMessage(text) {
+      const messageBox = document.getElementById('copyMessage');
+      messageBox.textContent = text;
+      messageBox.classList.add('show');
+      setTimeout(() => messageBox.classList.remove('show'), 2000);
+    }
+
+    function copyToClipboard(elementId) {
+      const textElement = document.getElementById(elementId);
+      const textToCopy = textElement.innerText;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          showCopyMessage("Copy thành công!");
+        });
+      }
+    }
+
+    function updateClock() {
+      const now = new Date();
+      const formattedDate = now.toLocaleDateString('vi-VN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      const formattedTime = now.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      document.getElementById('realTimeClock').textContent = `${formattedDate}, ${formattedTime}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
+
+
+
+<br>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction to Shadowrocket App</title>
+  <!-- Tailwind for utility spacing classes used in the markup -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6f5fb;
+      --card: #ffffff;
+      --text: #374151;
+      --heading: #1f2937;
+      --accent: #7c3aed; /* purple-600 */
+      --accent-700: #6d28d9; /* purple-700 */
+      --accent-100: #ede9fe; /* purple-100 */
+      --ring: rgba(124, 58, 237, 0.25);
+    }
+
+    /* Base */
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #faf5ff 0%, var(--bg) 60%) no-repeat;
+      color: var(--text);
+    }
+
+    /* Card container */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 1.75rem;
+      background-color: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(17, 24, 39, 0.08);
+      border: 1px solid #f1effa;
+    }
+
+    /* Headings */
+    h1, h2, h3, h4, h5, h6 { color: var(--heading); }
+
+    h1 {
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      background: linear-gradient(90deg, var(--accent-700), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-title {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding-left: .75rem;
+      border-left: 6px solid var(--accent);
+      background: linear-gradient(90deg, var(--accent-100), transparent);
+      border-radius: 6px;
+    }
+
+    /* Media & typography niceties */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 1rem 0;
+      display: block;
+      object-fit: cover;
+    }
+
+    p { line-height: 1.75; }
+
+    /* Lists */
+    ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
+    ol { list-style: decimal; margin-left: 1.5rem; margin-bottom: 1rem; }
+
+    /* Modern markers */
+    ul > li::marker, ol > li::marker { color: var(--accent); font-weight: 700; }
+
+    b { font-weight: 600; }
+
+    /* Subtle focus rings for a11y if you add links/buttons later */
+    a:focus-visible, button:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px var(--ring);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="p-4 sm:p-6 lg:p-8">
+  <div class="container">
+    <h1 class="text-3xl sm:text-4xl font-bold mb-6 text-center">Introduction to Shadowrocket App</h1>
+
+    <p class="mb-4">Shadowrocket is a powerful and flexible proxy application for iOS, known for its ability to manage network traffic, bypass firewalls, and secure online privacy. It functions as a local proxy tool, allowing users to route internet traffic through various proxy servers.</p>
+
+    <h2 class="section-title text-2xl sm:text-3xl font-semibold mt-8 mb-4">Key Features</h2>
+    <ul class="list-disc ml-6 space-y-2">
+      <li><b>Support for Multiple Proxy Protocols:</b> Shadowrocket supports a wide range of proxy protocols such as Shadowsocks, VMess, Trojan, Snell, HTTP, HTTPS, SOCKS5, etc., providing maximum flexibility for users.</li>
+      <li><b>Proxy Configuration Management:</b> Easily add, edit, and manage multiple proxy configurations from different providers.</li>
+      <li><b>URL Filtering and Routing Rules:</b> Allows users to set custom rules to route traffic based on domain names, IP addresses, or connection types. This helps optimize speed and efficiency of proxy usage.</li>
+      <li><b>Traffic Analysis:</b> Provides detailed information about network traffic being used, helping users monitor and control data.</li>
+      <li><b>Latency Test:</b> This feature helps test the response speed of proxy servers, allowing users to select the fastest server.</li>
+      <li><b>Ad and Malware Blocking:</b> Integrates the ability to block ads and malicious websites, enhancing a safer browsing experience.</li>
+      <li><b>Custom DNS Support:</b> Allows the use of private DNS servers to improve speed and privacy.</li>
+      <li><b>iOS Compatibility:</b> The application is optimized for iPhone and iPad devices.</li>
+    </ul>
+
+    <h2 class="section-title text-2xl sm:text-3xl font-semibold mt-8 mb-4">Uses of Shadowrocket</h2>
+    <p class="mb-4">Shadowrocket is widely used for various purposes:</p>
+    <ol class="list-decimal ml-6 space-y-2">
+      <li><b>Access Geo-blocked Content:</b> Bypass geographical restrictions to access websites, streaming services, or applications unavailable in your country.</li>
+      <li><b>Security and Privacy:</b> Encrypts internet traffic, helping protect personal data from monitoring by Internet Service Providers (ISPs) or third parties.</li>
+      <li><b>Hide Real IP Address:</b> Helps maintain anonymity while browsing, protecting your online identity.</li>
+      <li><b>Reduce Ping in Gaming:</b> In some cases, routing through a proxy server can help improve latency (ping) when playing online games.</li>
+      <li><b>Advanced Network Management:</b> Provides powerful tools to control and customize how network traffic is handled.</li>
+    </ol>
+
+    <h2 class="section-title text-2xl sm:text-3xl font-semibold mt-8 mb-4">Basic Usage of Shadowrocket</h2>
+    <p class="mb-4">To start using Shadowrocket, you can follow these steps:</p>
+
+    <h3 class="text-xl sm:text-2xl font-semibold mt-6 mb-3">Step 1: Download and Install the App</h3>
+    <ul class="list-disc ml-6 space-y-2">
+      <li>Open the App Store on your iOS device.</li>
+      <li>Search for "Shadowrocket" and download the application. Note that this is a paid app.</li>
+    </ul>
+
+    <p class="text-sm text-gray-500 text-center mt-2"><i></i></p>
+
+    <h3 class="text-xl sm:text-2xl font-semibold mt-6 mb-3">Step 2: Add Proxy Configuration</h3>
+    <p class="mb-2">There are several ways to add a proxy configuration:</p>
+    <ul class="list-disc ml-6 space-y-2">
+      <li><b>Scan QR Code:</b> This is the most common and convenient method. If your proxy service provider offers a QR code, tap the QR code scan icon in the top-left corner of Shadowrocket's main screen and scan the code.</li>
+    </ul>
+
+    <p class="text-sm text-gray-500 text-center mt-2"><i></i></p>
+
+    <ul class="list-disc ml-6 space-y-2 mt-4">
+      <li><b>Add Manually:</b> Tap the plus (+) icon in the top-right corner of the screen.
+        <ul class="list-circle ml-6 mt-2">
+          <li>Select the proxy type and fill in the necessary information such as Server Address, Port, Password, Encryption Method, etc., depending on the proxy protocol you are using.</li>
+          <li>Tap "Done" to save the configuration.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p class="text-sm text-gray-500 text-center mt-2"><i></i></p>
+
+    <ul class="list-disc ml-6 space-y-2 mt-4">
+      <li><b>Import from URL:</b> If you have a proxy configuration subscription URL, tap the plus (+) icon, select "Subscribe" or "Add URL" and paste the URL.</li>
+    </ul>
+
+    <p class="text-sm text-gray-500 text-center mt-2"><i></i></p>
+
+    <h3 class="text-xl sm:text-2xl font-semibold mt-6 mb-3">Step 3: Enable Proxy Connection</h3>
+    <ul class="list-disc ml-6 space-y-2">
+      <li>After adding the configuration, you will see a list of proxy servers.</li>
+      <li>Select the server you want to use by tapping on it.</li>
+      <li>Toggle the switch at the top of the screen to "Connected" (green) to enable the proxy connection.</li>
+      <li>The first time you enable it, the system will ask for permission to add a VPN configuration. Please accept.</li>
+    </ul>
+
+    <p class="text-sm text-gray-500 text-center mt-2"><i></i></p>
+
+    <h3 class="text-xl sm:text-2xl font-semibold mt-6 mb-3">Step 4: Set Up Rules (Advanced Option)</h3>
+    <ul class="list-disc ml-6 space-y-2">
+      <li>From the main screen, select the "Rules" tab.</li>
+      <li>Here, you can customize how Shadowrocket handles traffic. Common rules include:
+        <ul class="list-circle ml-6 mt-2">
+          <li><b>Proxy:</b> All traffic will go through the proxy.</li>
+          <li><b>Direct:</b> All traffic will go directly (not through the proxy).</li>
+          <li><b>Scene:</b> Route based on specific scenarios.</li>
+          <li><b>Config:</b> Use rules defined in the configuration.</li>
+        </ul>
+      </li>
+      <li>You can add custom rules based on domain names (Domain), IP ranges (IP Range), or GEOIP (geographical IP) to route traffic flexibly.</li>
+    </ul>
+
+    <p class="text-sm text-gray-500 text-center mt-2"><i></i></p>
+
+    <h3 class="text-xl sm:text-2xl font-semibold mt-6 mb-3">Step 5: Test Connection</h3>
+    <ul class="list-disc ml-6 space-y-2">
+      <li>After enabling the proxy, open a web browser or app and check if your IP address has changed (you can search "what is my IP" on Google).</li>
+      <li>Ensure that you can access content that was previously blocked.</li>
+    </ul>
+
+    <h2 class="section-title text-2xl sm:text-3xl font-semibold mt-8 mb-4">Important Notes</h2>
+    <ul class="list-disc ml-6 space-y-2">
+      <li><b>Paid Application:</b> Shadowrocket is a paid application on the App Store.</li>
+      <li><b>Requires Proxy Service:</b> Shadowrocket itself does not provide proxy services. You need an account or proxy configuration from a third-party service provider.</li>
+      <li><b>Responsible Use:</b> Ensure you comply with laws and terms of service when using proxy services.</li>
+    </ul>
+
+    <p class="mt-8 text-center text-gray-600">Hope this information is helpful to you!</p>
+    <footer class="text-center mt-10 text-gray-500 text-sm">
+      <p>&copy; 2025 Information provided for educational purposes only.</p>
+    </footer>
+  </div>
+  
+
+</body>
+</html>
